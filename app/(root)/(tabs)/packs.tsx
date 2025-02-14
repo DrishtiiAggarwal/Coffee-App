@@ -10,12 +10,12 @@ export default function Index() {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-row justify-between items-center p-4 pb-5 border-gray-300">
-        <Text className="text-[22px] font-bold text-gray-800">
+        <Text className="text-[22px] font-bold text-[#48001f]">
           {" "}
           Coffee Pack
         </Text>
-        <TouchableOpacity className="border-2 border-gray-500 px-7 py-2 rounded-md shadow-inner">
-          <Text className="text-gray-700 font-bold">FAQs</Text>
+        <TouchableOpacity className="border-2 border-[#48001f] px-7 py-2 rounded-md shadow-inner">
+          <Text className="text-[#48001f] font-bold">FAQs</Text>
         </TouchableOpacity>
       </View>
 
@@ -25,12 +25,12 @@ export default function Index() {
             key={tab}
             onPress={() => setActiveTab(tab)}
             className={`flex-1 p-3 ${
-              activeTab === tab ? "border-b-2 border-sky-950" : "text-gray-500"
+              activeTab === tab ? "border-b-2 border-[#48001f]" : "text-gray-500"
             }`}
           >
             <Text
               className={`text-center font-bold text-[18px] ${
-                activeTab === tab ? "text-sky-950" : "text-gray-500"
+                activeTab === tab ? "text-[#48001f]" : "text-gray-500"
               }`}
             >
               {tab}

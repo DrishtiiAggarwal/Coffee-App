@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { useCart } from "../../context/CartContext";
 import { Ionicons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Cart = () => {
   const { cart, addToCart, removeFromCart, clearCart } = useCart();
@@ -11,95 +12,113 @@ const Cart = () => {
   );
 
   return (
-    <View className="flex-1 bg-white p-5">
-      <Text className="text-3xl font-bold mb-4">Your Cart</Text>
-
-      {cart.length === 0 ? (
-        <View className="flex-1 justify-center items-center">
-          <Ionicons name="cart-outline" size={80} color="gray" />
-          <Text className="text-lg text-gray-600 mt-4">
-            Your cart is empty.
+    <SafeAreaView className="bg-white h-[93vh] overflow-scroll">
+      <View className="flex-1 bg-white ">
+        <View className="flex-row justify-between items-center pt-5 px-5">
+          <Text className="text-[12px] p-0.5 font-semibold text-gray-500">
+            KALKAJI - 2.1 KM AWAY
           </Text>
         </View>
-      ) : (
-        <>
-          <ScrollView className="mb-6">
-            {cart.map((item, index) => (
-              <View
-                key={index}
-                className="flex-row items-center justify-between p-4 bg-gray-100 rounded-xl mb-3 shadow-md"
-              >
-                <Image
-                  source={{ uri: item.image }}
-                  className="w-20 h-20 rounded-lg"
-                />
 
-                <View className="flex-1 ml-4">
-                  <Text className="text-lg font-semibold">{item.name}</Text>
-                  <Text className="text-gray-500">{item.kcal}</Text>
-                  <Text className="text-xl font-bold text-blue-600">
-                    ₹{item.price}
-                  </Text>
-                </View>
-
-                <View className="flex-row items-center bg-gray-200 px-3 py-1.5 rounded-full shadow-md">
-                  {/* Decrease Button */}
-                  <TouchableOpacity
-                    className="bg-gradient-to-r from-red-500 to-red-700 w-8 h-8 flex items-center justify-center rounded-full shadow-md active:scale-90"
-                    onPress={() => removeFromCart(item.name)}
-                  >
-                    <Text className="text-white text-lg font-bold">-</Text>
-                  </TouchableOpacity>
-
-                  {/* Quantity Display */}
-                  <Text className="mx-3 text-lg font-semibold text-gray-900">
-                    {item.quantity}
-                  </Text>
-
-                  {/* Increase Button */}
-                  <TouchableOpacity
-                    className="bg-gradient-to-r from-green-500 to-green-700 w-8 h-8 flex items-center justify-center rounded-full shadow-md active:scale-90"
-                    onPress={() => addToCart(item)}
-                  >
-                    <Text className="text-white text-lg font-bold">+</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            ))}
-          </ScrollView>
-
-          {/* Cart Summary */}
-          <View className="border-t pt-4">
-            <Text className="text-xl font-semibold">
-              Total:{" "}
-              <Text className="text-blue-600 font-bold">
-                ₹{totalPrice.toFixed(2)}
-              </Text>
+        <View>
+          <TouchableOpacity>
+            <Text className="text-[#48001f]  text-[23px] mb-4 px-5 font-bold">
+              Your Cart
             </Text>
+          </TouchableOpacity>
+        </View>
 
-            <View className="flex-row mt-4">
-              <TouchableOpacity
-                className="flex-1 bg-red-500 px-6 py-3 rounded-lg mr-2 active:opacity-80"
-                onPress={() => clearCart()}
-              >
-                <Text className="text-white text-center font-semibold">
-                  Clear Cart
-                </Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                className="flex-1 bg-blue-600 px-6 py-3 rounded-lg active:opacity-80"
-                onPress={() => {}}
-              >
-                <Text className="text-white text-center font-semibold">
-                  Checkout
-                </Text>
-              </TouchableOpacity>
-            </View>
+        {cart.length === 0 ? (
+          <View className="flex-1 justify-center items-center">
+            <Ionicons name="cart-outline" size={80} color="gray" />
+            <Text className="text-lg font-semibold text-gray-500 mt-4">
+              Your cart is empty.
+            </Text>
           </View>
-        </>
-      )}
-    </View>
+        ) : (
+          <>
+            <ScrollView className=" p-5">
+              {cart.map((item, index) => (
+                <View
+                  key={index}
+                  className="flex-row items-center justify-between p-3 bg-rose-50 rounded-xl mb-3 shadow-md"
+                >
+                  <Image
+                    source={
+                      typeof item.image === "string"
+                        ? { uri: item.image }
+                        : item.image
+                    }
+                    style={{ width: 100, height: 100, borderRadius: 10 }}
+                  />
+                  <View className="flex">
+                    <View className="flex-1 ml-4">
+                      <Text className="text-lg font-semibold">{item.name}</Text>
+                      <Text className="text-gray-500">kcal: {item.kcal}</Text>
+                      <Text className="text-xl font-bold text-[#63002d]">
+                        ₹{item.price}
+                      </Text>
+                    </View>
+
+                    <View className="flex-row mr-2 mx-auto items-center bg-gradient-to-r from-[#9e004c] to-[#80003c] px-3 py-1.5 rounded-xl shadow-md">
+                      {/* Decrease Button */}
+                      <TouchableOpacity
+                        className="flex items-center justify-center "
+                        onPress={() => removeFromCart(item.name)}
+                      >
+                        <Text className="text-white text-lg font-bold">-</Text>
+                      </TouchableOpacity>
+
+                      {/* Quantity Display */}
+                      <Text className="mx-3 text-lg font-semibold text-white">
+                        {item.quantity}
+                      </Text>
+
+                      {/* Increase Button */}
+                      <TouchableOpacity
+                        className="flex items-center justify-center"
+                        onPress={() => addToCart(item)}
+                      >
+                        <Text className="text-white text-lg font-bold">+</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              ))}
+            </ScrollView>
+
+            <View className="border-t  border-gray-300 shadow-lg shadow-gray-500">
+              <Text className="text-xl px-5 py-2 text-[#48001f] font-bold">
+                Total:{" "}
+                <Text className="text-[#48001f] font-bold">
+                  ₹{totalPrice.toFixed(2)}
+                </Text>
+              </Text>
+
+              <View className="flex-row px-5 pb-5">
+                <TouchableOpacity
+                  className="flex-1 bg-red-800 px-5 py-3 rounded-lg mr-3 active:opacity-80"
+                  onPress={() => clearCart()}
+                >
+                  <Text className="text-white text-lg text-center font-semibold">
+                    Clear Cart
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  className="flex-1 bg-gradient-to-r ml-3 from-green-600 to-green-700 px-5 py-3 rounded-lg active:opacity-80"
+                  onPress={() => {}}
+                >
+                  <Text className="text-white text-center text-lg font-semibold">
+                    Place order
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </>
+        )}
+      </View>
+    </SafeAreaView>
   );
 };
 

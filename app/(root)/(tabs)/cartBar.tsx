@@ -10,19 +10,24 @@ const CartBar = () => {
   if (cart.length === 0) return null; // Hide if cart is empty
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce((sum, item) => sum + item.quantity * parseFloat(item.price), 0);
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.quantity * parseFloat(item.price),
+    0
+  );
 
   return (
-    <View className="absolute bottom-[70px] left-4 right-4 bg-white p-4 rounded-2xl shadow-lg flex-row justify-between items-center">
+    <View className="absolute bottom-[70px] left-0 right-0 bg-[#63002d] px-4 py-4 rounded-t-2xl  flex-row justify-between items-center">
       <View>
-        <Text className="text-lg font-bold text-gray-800">
-          {totalItems} {totalItems > 1 ? "Items" : "Item"}
-        </Text>
-        <Text className="text-base text-gray-600">₹{totalPrice.toFixed(2)}</Text>
+        <View className="flex-row gap-2">
+          <Text className="text-white">
+            {totalItems} {totalItems > 1 ? "Items" : "Item"}
+          </Text>
+          <Text className=" text-white">₹{totalPrice.toFixed(2)}</Text>
+        </View>
+        <Text className="text-gray-100">Extra charges may apply</Text>
       </View>
 
       <TouchableOpacity
-        className="bg-blue-600 px-6 py-3 rounded-xl shadow-md active:opacity-80"
         onPress={() => navigation.navigate("cart" as never)}
       >
         <Text className="text-white font-semibold text-lg">View Cart</Text>

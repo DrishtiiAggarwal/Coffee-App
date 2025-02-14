@@ -1,5 +1,6 @@
 import { SplashScreen } from "expo-router";
 import { CartProvider } from "./context/CartContext";
+import { CategoryProvider } from "./context/CategoryContext";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
@@ -39,11 +40,12 @@ export default function RootLayout() {
 
   return (
     <CartProvider>
+      <CategoryProvider>
       <Tab.Navigator
         screenOptions={{
-          tabBarStyle: { backgroundColor: "#fff", paddingTop: 5, height: 70 },
+          tabBarStyle: { backgroundColor: "#ffffff", paddingTop: 5, height: 70 },
           tabBarLabelStyle: { fontSize: 16, fontWeight: "bold" },
-          tabBarActiveTintColor: "#2b2118",
+          tabBarActiveTintColor: "#63002d",
           tabBarInactiveTintColor: "#aaa",
           headerShown: false,
         }}
@@ -96,6 +98,7 @@ export default function RootLayout() {
         />
       </Tab.Navigator>
       {activeScreen !== "cart" && <CartBar />}
+      </CategoryProvider>
     </CartProvider>
   );
 }
