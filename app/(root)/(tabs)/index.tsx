@@ -42,7 +42,7 @@ const menuItems: MenuCard[] = [
     name: "Hot Beverages",
     image: images.hotBeverages,
     category: "Beverages",
-    subcategory: "HOT TEAS",
+    subcategory: "Hot Teas",
   },
   {
     name: "Meal Combos",
@@ -66,7 +66,7 @@ const menuItems: MenuCard[] = [
     name: "Cold Coffees",
     image: images.coldCoffee,
     category: "Beverages",
-    subcategory: "TWS SPECIAL",
+    subcategory: "Twc Specials",
   },
   {
     name: "Baked Goodness",

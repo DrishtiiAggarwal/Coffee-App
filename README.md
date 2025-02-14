@@ -1,50 +1,66 @@
-# Welcome to your Expo app 👋
+# Coffee Shop App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+Coffee Shop App is a React Native application built using Expo CLI and NativeWind. It allows users to browse menus, add items to the cart, and place orders seamlessly. The app features a modern UI with a smooth user experience for food and beverage selection.
 
-## Get started
+## Features
+- **Home Page**: Displays user-specific information, coins, wallet balance, and menu categories.
+- **Menu Page**: Users can browse food and beverage categories, apply filters, and view detailed item information.
+- **Cart Page**: Users can add, remove, and adjust quantities of items before checkout.
+- **Subscription Packs**: A section for exploring upcoming subscription offers.
+- **Re-order Feature**: Quickly reorder previously ordered items.
+- **Discounts & Offers**: Display available promo codes and discounts.
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+## Screenshots
+(Add screenshots of the app interface here)
 
-2. Start the app
+## Tech Stack
+- **React Native** with Expo CLI
+- **NativeWind** for styling (Tailwind CSS for React Native)
+- **React Navigation** for seamless navigation
+- **Context API** for state management
+- **TypeScript**
 
-   ```bash
-    npx expo start
-   ```
+## Installation & Setup
+### Prerequisites
+- Node.js (Latest LTS version recommended)
+- Expo CLI (`npm install -g expo-cli`)
+- Git (For cloning the repository)
 
-In the output, you'll find options to open the app in a
+### Steps to Run Locally
+```sh
+# Clone the repository
+git clone https://github.com/your-username/coffee-shop-app.git
+cd coffee-shop-app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+# Install dependencies
+npm install
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+# Start the Expo development server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Scan the QR code using the Expo Go app on your mobile device or run the app on an emulator.
 
-## Learn more
+## Folder Structure
+```sh
+coffee-shop-app/
+│── assets/          # Images and icons
+│── components/      # Reusable UI components
+│── screens/         # App screens (Home, Menu, Cart, etc.)
+│── navigation/      # Navigation setup
+│── redux/           # Redux store (if used)
+│── utils/           # Helper functions
+│── App.tsx         # Main entry point
+│── package.json    # Project dependencies
+│── tailwind.config.js # TailwindCSS config for NativeWind
+```
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Future Enhancements
+- **Payment Integration** (Stripe, Razorpay, etc.)
+- **User Authentication** (Google/Facebook Sign-In)
+- **Dark Mode Support**
+- **Push Notifications** for order updates

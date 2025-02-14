@@ -94,7 +94,7 @@ const Menu = () => {
             >
               <Text
                 className={`${
-                  category === activeCategory ? "text-white" : "text-zinc-700"
+                  category === activeCategory ? "text-white" : "text-zinc-700 font-semibold"
                 } text-base`}
               >
                 {category}
@@ -153,7 +153,7 @@ const Menu = () => {
         {/* Subcategories Tabs */}
         {activeCategory && (
           <View className="mt-4">
-            <Text className="text-lg text-[#48001f] font-bold mb-2">{activeCategory}</Text>
+            <Text className="text-xl text-[#48001f] font-bold mb-2 ">{activeCategory}</Text>
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -168,8 +168,8 @@ const Menu = () => {
                   <Text
                     className={`${
                       activeSubCategory === tab
-                        ? "text-[#48001f] font-bold underline underline-offset-4"
-                        : "text-gray-600 font-semibold"
+                        ? "text-[#48001f] text-lg font-bold underline underline-offset-4"
+                        : "text-gray-600 text-lg font-semibold"
                     }`}
                   >
                     {tab}

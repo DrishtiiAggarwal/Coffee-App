@@ -117,7 +117,7 @@ const cafeMenu: Record<string, Record<string, MenuType[]>> = {
   },
 
   "Beverages": {
-    "TWC SPECIALS": [
+    "Twc Specials": [
       {
         name: "Tiramisu Latte",
         kcal: "256 kcal",
@@ -131,7 +131,7 @@ const cafeMenu: Record<string, Record<string, MenuType[]>> = {
         image: images.mochaToffeeNutLatte,
       },
     ],
-    "CLASSICS": [
+    "Classics": [
       {
         name: "Cappuccino",
         kcal: "150 kcal",
@@ -145,7 +145,7 @@ const cafeMenu: Record<string, Record<string, MenuType[]>> = {
         image: images.espresso,
       },
     ],
-    "HOT TEAS": [
+    "Hot Teas": [
       {
         name: "English Breakfast Tea",
         kcal: "0 kcal",
@@ -159,7 +159,7 @@ const cafeMenu: Record<string, Record<string, MenuType[]>> = {
         image: images.greenTea,
       },
     ],
-    "FRAPPE": [
+    "Frappe": [
       {
         name: "Java Chip Frappe",
         kcal: "380 kcal",

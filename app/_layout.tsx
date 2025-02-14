@@ -2,7 +2,7 @@ import { SplashScreen } from "expo-router";
 import { CartProvider } from "./context/CartContext";
 import { CategoryProvider } from "./context/CategoryContext";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons ,MaterialCommunityIcons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import "./global.css";
 import { useFonts } from "expo-font";
@@ -43,8 +43,8 @@ export default function RootLayout() {
       <CategoryProvider>
       <Tab.Navigator
         screenOptions={{
-          tabBarStyle: { backgroundColor: "#ffffff", paddingTop: 5, height: 70 },
-          tabBarLabelStyle: { fontSize: 16, fontWeight: "bold" },
+          tabBarStyle: { backgroundColor: "#ffffff", paddingTop: 10, height: 70 },
+          tabBarLabelStyle: { fontSize: 14, fontWeight: "light" },
           tabBarActiveTintColor: "#63002d",
           tabBarInactiveTintColor: "#aaa",
           headerShown: false,
@@ -61,8 +61,8 @@ export default function RootLayout() {
           component={Index}
           options={{
             tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="home" size={size} color={color} />
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="home" size={35} color={color} />
             ),
           }}
         />
@@ -71,8 +71,8 @@ export default function RootLayout() {
           component={Pack}
           options={{
             tabBarLabel: "Packs",
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="gift" size={size} color={color} />
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="shopping" size={30} color={color} />
             ),
           }}
         />
@@ -81,8 +81,8 @@ export default function RootLayout() {
           component={Menu}
           options={{
             tabBarLabel: "Menu",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="payment" size={size} color={color} />
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="book-open-variant" size={35} color={color} />
             ),
           }}
         />
@@ -91,8 +91,8 @@ export default function RootLayout() {
           component={Cart}
           options={{
             tabBarLabel: "Cart",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="more-horiz" size={size} color={color} />
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="cart" size={30} color={color} />
             ),
           }}
         />
