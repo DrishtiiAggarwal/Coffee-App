@@ -1,4 +1,4 @@
-# Coffee Shop App
+# React Native Coffee-App ☕
 
 ## Overview
 Coffee Shop App is a React Native application built using Expo CLI and NativeWind. It allows users to browse menus, add items to the cart, and place orders seamlessly. The app features a modern UI with a smooth user experience for food and beverage selection.
@@ -13,7 +13,12 @@ Coffee Shop App is a React Native application built using Expo CLI and NativeWin
 
 
 ## Screenshots
-(Add screenshots of the app interface here)
+![image](https://github.com/user-attachments/assets/c8787cec-908b-48f4-8ead-3a1b1543068c)
+![image](https://github.com/user-attachments/assets/43c5898f-94eb-4eed-a48b-cf39c5068b99)
+![image](https://github.com/user-attachments/assets/31a66acf-c2b9-4df2-9b0f-d524114d92c6)
+![image](https://github.com/user-attachments/assets/a9676a91-57f1-4cf3-a3ee-502054f8ea4a)
+![image](https://github.com/user-attachments/assets/2b66b0cd-0958-4e06-83b2-ddea38075f77)
+
 
 ## Tech Stack
 - **React Native** with Expo CLI
