@@ -13,11 +13,11 @@ Coffee Shop App is a React Native application built using Expo CLI and NativeWin
 
 
 ## Screenshots
-![image](https://github.com/user-attachments/assets/c8787cec-908b-48f4-8ead-3a1b1543068c)
-![image](https://github.com/user-attachments/assets/43c5898f-94eb-4eed-a48b-cf39c5068b99)
-![image](https://github.com/user-attachments/assets/31a66acf-c2b9-4df2-9b0f-d524114d92c6)
-![image](https://github.com/user-attachments/assets/a9676a91-57f1-4cf3-a3ee-502054f8ea4a)
-![image](https://github.com/user-attachments/assets/2b66b0cd-0958-4e06-83b2-ddea38075f77)
+![image](https://github.com/user-attachments/assets/640cb048-9ec2-4c9a-a0e3-dfb44c977f5e)
+![image](https://github.com/user-attachments/assets/0565f1e6-856a-4be6-8ea5-d9a49499ea76)
+![image](https://github.com/user-attachments/assets/2cedebdc-4985-4f57-9811-a55b6c7276af)
+![image](https://github.com/user-attachments/assets/4b9f470f-ece0-4cde-a319-eefb6faa6525)
+![image](https://github.com/user-attachments/assets/d50b502b-f066-4f53-b967-6c84cac25408)
 
 
 ## Tech Stack
